@@ -23,8 +23,8 @@ const routes = {
   , '/adjective'      : Adjective
   , '/animal_set-a'      : Animal_setA
   , '/animal_set-b'      : Animal_setB
-  , 'template1'      : Template1
-  , 'template2'      : Template2
+  , '/template1'      : Template1
+  , '/template2'      : Template2
 };
 
 const router = async () => {
