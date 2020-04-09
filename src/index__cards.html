@@ -21,69 +21,138 @@
 </head>
 
 <body>
-  <header id="header_container">
-    <nav role="navigation">
-      <div class="menuToggle">
-        <input type="checkbox">
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul class="menu">
-          <a href="#" class="header-item active">Main Page</a>
-          <a href="#/cards" class="header-item">Action (set A)</a>
-          <a href="#/cards" class="header-item">Action (set B)</a>
-          <a href="#/cards" class="header-item">Action (set C)</a>
-          <a href="#/cards" class="header-item">Adjective</a>
-          <a href="#/cards" class="header-item">Animal (set A)</a>
-          <a href="#/cards" class="header-item">Animal (set B)</a>
-          <a href="#/cards" class="header-item">Clothes</a>
-          <a href="#/cards" class="header-item">Emotion</a>
-        </ul>
-      </div>
-    </nav>
-    <div class="switch-container">
-      <input type="checkbox" class="switch-input">
-      <span class="switch-label" data-on="Train" data-off="Play"></span>
-      <span class="switch-handle"></span>
+  <div id="root">
+    <div class="app-container">
+      <header id="header_container">
+        <nav role="navigation">
+          <div class="menuToggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <!-- change to colored -->
+            <ul class="menu green">
+              <a href="#" class="header-item active">Main Page</a>
+              <a href="#/cards" class="header-item">Action (set A)</a>
+              <a href="#/cards" class="header-item">Action (set B)</a>
+              <a href="#/cards" class="header-item">Action (set C)</a>
+              <a href="#/cards" class="header-item">Adjective</a>
+              <a href="#/cards" class="header-item">Animal (set A)</a>
+              <a href="#/cards" class="header-item">Animal (set B)</a>
+              <a href="#/cards" class="header-item">Clothes</a>
+              <a href="#/cards" class="header-item">Emotion</a>
+            </ul>
+          </div>
+        </nav>
+        <div class="switch-container">
+          <label for="" class="switch">
+            <input type="checkbox" class="switch-input">
+            <span class="switch-label" data-on="Train" data-off="Play"></span>
+            <span class="switch-handle"></span>
+          </label>
+        </div>
+      </header>
+    
+      <section id="page_container" class="container main-container" >
+        <div class="rating none"></div>
+
+        <div class="card-container">
+          <div class="card card-cover">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">злиться</div>
+            </div>
+            <div class="rotate none"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card card-cover">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">злиться</div>
+            </div>
+            <div class="rotate none"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card card-cover">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg)">
+              <div class="card-header none">злиться</div>
+            </div>
+            <div class="rotate none"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card card-cover">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header none">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg)">
+              <div class="card-header none">злиться</div>
+            </div>
+            <div class="rotate none"></div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">злиться</div>
+            </div>
+            <div class="rotate"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">злиться</div>
+            </div>
+            <div class="rotate"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">злиться</div>
+            </div>
+            <div class="rotate"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card">
+            <div class="front" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">angry</div>
+            </div>
+            <div class="back" style="background-image: url(./assets/img/angry.jpg);">
+              <div class="card-header">злиться</div>
+            </div>
+            <div class="rotate"></div>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="btn">Start game</button>
+        </div>
+        <audio class="audio"></audio>
+        <audio class="soundEffects"></audio>
+      </section>
     </div>
-  </header>
-
-  <section id="page_container" class="container main-container" >
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-      <a href="#/cards" class="main-card">
-        <img src="./assets/img/angry.jpg" alt="" srcset="">
-        Action (set A)
-      </a>
-  </section>
-
-  
+  </div>
 
 </body>
 
