@@ -1,3 +1,6 @@
+
+// ./img/success.jpg
+// ./audio/cry.mp3
 const cards = [ 
   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
   [
