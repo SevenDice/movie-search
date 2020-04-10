@@ -12,12 +12,10 @@ let Sidenav = {
               <a href="/#/" class="header-item active">Main Page</a>
               <a href="/#/action_set-a" class="header-item">Action (set A)</a>
               <a href="/#/action_set-b" class="header-item">Action (set B)</a>
-              <a href="/#/action_set-c" class="header-item">Action (set C)</a>
-              <a href="/#/adjective" class="header-item">Adjective</a>
               <a href="/#/animal_set-a" class="header-item">Animal (set A)</a>
               <a href="/#/animal_set-b" class="header-item">Animal (set B)</a>
-              <a href="/#/template1" class="header-item">Template 1</a>
-              <a href="/#/template2" class="header-item">Template 2</a>
+              <a href="/#/clothes" class="header-item">Clothes</a>
+              <a href="/#/emotions" class="header-item">Emotions</a>
             </ul>
           </div>
         </nav>

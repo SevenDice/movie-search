@@ -3,28 +3,27 @@
 import Main from './views/pages/Main.js'
 import Action_setA from './views/pages/Action_setA.js'
 import Action_setB from './views/pages/Action_setB.js'
-import Action_setC from './views/pages/Action_setC.js'
-import Adjective from './views/pages/Adjective.js'
 import Animal_setA from './views/pages/Animal_setA.js'
 import Animal_setB from './views/pages/Animal_setB.js'
-import Template1 from './views/pages/Template1.js'
-import Template2 from './views/pages/Template2.js'
+import Clothes from './views/pages/Clothes.js'
+import Emotion from './views/pages/Emotion.js'
+import Error404     from './views/pages/Error404.js'
 
 import Sidenav from './views/components/Sidenav.js'
 
 import Utils from './services/Utils.js'
+
+import Cards from './assets/cards.js'
 
 // List of supported routes
 const routes = {
   '/'             : Main
   , '/action_set-a'      : Action_setA
   , '/action_set-b'      : Action_setB
-  , '/action_set-c'      : Action_setC
-  , '/adjective'      : Adjective
   , '/animal_set-a'      : Animal_setA
   , '/animal_set-b'      : Animal_setB
-  , '/template1'      : Template1
-  , '/template2'      : Template2
+  , '/clothes'      : Clothes
+  , '/emotion'      : Emotion
 };
 
 const router = async () => {

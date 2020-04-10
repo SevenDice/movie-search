@@ -1,9 +1,9 @@
-let Action_setC = {
+let Emotion = {
 
   render : async () => {
       let view =  /*html*/`
           <section class="section">
-              <h1> Action_setC </h1>
+              <h1> Emotion </h1>
           </section>
       `
       return view
@@ -11,4 +11,4 @@ let Action_setC = {
   , after_render: async () => {
   }
 }
-export default Action_setC;
+export default Emotion;

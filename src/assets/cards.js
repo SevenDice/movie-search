@@ -1,5 +1,7 @@
 const cards = [ 
   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+  ['/img/cry.jpg', '/img/open.jpg', '/img/cat.jpg', '/img/bird.jpg', '/img/skirt.jpg', '/img/sad.jpg'],
+  ['/action_set-a', '/action_set-b', '/animal_set-a', '/animal_set-b', '/clothes', '/emotion'],
   [
     {
       word: 'cry',
