@@ -37,22 +37,15 @@ let Main = {
     let mainCardTitle = await getTitleList();
     let mainCardImage = await getImageList();
     let mainCardLink = await getLinkList();
-    // let view;
-    // for(let i = 0; i > mainCardTitle.length; i++) {
-    //   view += /*html*/`
-    //   <a href=${'/#' + mainCardLink[i]} class="main-card green">
-    //   <img src=${"./assets" + mainCardImage[i]} alt="" srcset="">
-    //   ${mainCardTitle[i]}
-    // </a>
-    //   `
-    // }
-
-    let view = /*html*/`
-    <a href=${'/#' + mainCardLink[0]} class="main-card green">
-    <img src=${"./assets" + mainCardImage[0]} alt="" srcset="">
-    ${mainCardTitle[0]}
-    `
-
+    let view = '';
+    for(let i = 0; i < mainCardTitle.length; i++) {
+      view += /*html*/`
+      <a href=${'/#' + mainCardLink[i]} class="main-card green">
+      <img src=${"./assets" + mainCardImage[i]} alt="" srcset="">
+      ${mainCardTitle[i]}
+    </a>
+      `
+    }
     return view
   },
   after_render: async () => { }
