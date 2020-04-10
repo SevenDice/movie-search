@@ -26,11 +26,9 @@ let getLinkList = async () => {
     return linkList;
 
   } catch (err) {
-    console.log('Error to get list of images', err);
+    console.log('Error to get list of links', err);
   }
 }
-
-
 
 let Main = {
   render: async () => {
