@@ -2,7 +2,7 @@ import cards from "../../assets/cards.js";
 
 let getCards = async () => {
   try {
-    const cardsData = cards[4];
+    const cardsData = cards[8];
     return cardsData;
   }
 
@@ -11,7 +11,7 @@ let getCards = async () => {
   }
 }
 
-let Action_setB = {
+let Emotions = {
   render : async () => {
     let cardsContent =  await getCards();
     let view = '';
@@ -40,4 +40,4 @@ let Action_setB = {
   , after_render: async () => {
   }
 }
-export default Action_setB;
+export default Emotions;

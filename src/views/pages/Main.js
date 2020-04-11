@@ -35,7 +35,9 @@ let Main = {
     let mainCardTitle = await getTitleList();
     let mainCardImage = await getImageList();
     let mainCardLink = await getLinkList();
+
     let view = '';
+    
     for(let i = 0; i < mainCardTitle.length; i++) {
       view += /*html*/`
       <a href=${'/#' + mainCardLink[i]} class="main-card green">

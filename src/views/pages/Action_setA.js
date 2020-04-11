@@ -11,13 +11,9 @@ let getCards = async () => {
   }
 }
 
-
-
 let Action_setA = {
   render : async () => {
     let cardsContent =  await getCards();
-
-    
     let view = '';
 
     view += /*html*/`<div class="rating none"></div>`
@@ -26,30 +22,19 @@ let Action_setA = {
       view += /*html*/`
       <div class="card-container">
           <div class="card card-cover">
-            <div class="front" style="background-image: url(../../assets/${cardsContent[0].image};">
-              <div class="card-header none">${cardsContent[i].word}</div>
+            <div class="front" style="background-image: url(../../assets${cardsContent[i].image});">
+              <div class="card-header ">${cardsContent[i].word}</div>
             </div>
-            <div class="back" style="background-image: url(./assets/${cardsContent[0].image};">
-              <div class="card-header none">${cardsContent[i].translation}</div>
+            <div class="back" style="background-image: url(../../assets${cardsContent[i].image});">
+              <div class="card-header ">${cardsContent[i].translation}</div>
             </div>
-            <div class="rotate none"></div>
+            <div class="rotate"></div>
           </div>
         </div>
       `
+      // class "none" for hide content inside card
     }
 
-    console.log(cardsContent[0]);
-    console.log(cardsContent[0].word);
-    console.log(cardsContent[0].translation);
-    console.log(cardsContent[0].image);
-    console.log(cardsContent[0].audioSrc);
-
-
-      // let view =  /*html*/`
-      //     <section class="section">
-      //         <h1> Action_setA </h1>
-      //     </section>
-      // `
       return view
   }
   , after_render: async () => {
