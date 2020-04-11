@@ -1,7 +1,7 @@
 const cards = [ 
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
-  ['/img/cry.jpg', '/img/open.jpg', '/img/cat.jpg', '/img/bird.jpg', '/img/skirt.jpg', '/img/sad.jpg'],
-  ['/action_set-a', '/action_set-b', '/animal_set-a', '/animal_set-b', '/clothes', '/emotion'],
+  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Fruits', 'Vegetables'],
+  ['/img/cry.jpg', '/img/open.jpg', '/img/cat.jpg', '/img/bird.jpg', '/img/skirt.jpg', '/img/sad.jpg', '/img/banana.jpg', '/img/tomato.jpg'],
+  ['/action_set-a', '/action_set-b', '/animal_set-a', '/animal_set-b', '/clothes', '/emotion', '/fruits', '/vegetables'],
   [
     {
       word: 'cry',
@@ -300,6 +300,106 @@ const cards = [
       translation: 'смех',
       image: '/img/laugh.jpg',
       audioSrc: './audio/laugh.mp3'
+    }
+  ],
+  [
+    {
+      word: 'basil',
+      translation: 'базилик',
+      image: '/img/basil.jpg',
+      audioSrc: './audio/basil.mp3'
+    },
+    {
+      word: 'cabbage',
+      translation: 'капуста',
+      image: '/img/cabbage.jpg',
+      audioSrc: './audio/cabbage.mp3'
+    },
+    {
+      word: 'carrot',
+      translation: 'морковь',
+      image: '/img/carrot.jpg',
+      audioSrc: './audio/carrot.mp3'
+    },
+    {
+      word: 'cucumber',
+      translation: 'огурец',
+      image: '/img/cucumber.jpg',
+      audioSrc: './audio/cucumber.mp3'
+    },
+    {
+      word: 'eggplant',
+      translation: 'баклажан',
+      image: '/img/eggplant.jpg',
+      audioSrc: './audio/eggplant.mp3'
+    },
+    {
+      word: 'pea',
+      translation: 'горох',
+      image: '/img/pea.jpg',
+      audioSrc: './audio/pea.mp3'
+    },
+    {
+      word: 'potato',
+      translation: 'картофель',
+      image: '/img/potato.jpg',
+      audioSrc: './audio/potato.mp3'
+    },
+    {
+      word: 'tomato',
+      translation: 'помидор',
+      image: '/img/tomato.jpg',
+      audioSrc: './audio/tomato.mp3'
+    }
+  ],
+  [
+    {
+      word: 'apricot',
+      translation: 'абрикос',
+      image: '/img/apricot.jpg',
+      audioSrc: './audio/apricot.mp3'
+    },
+    {
+      word: 'banana',
+      translation: 'банан',
+      image: '/img/banana.jpg',
+      audioSrc: './audio/banana.mp3'
+    },
+    {
+      word: 'bergamot',
+      translation: 'бергамот',
+      image: '/img/bergamot.jpg',
+      audioSrc: './audio/bergamot.mp3'
+    },
+    {
+      word: 'grapefruit',
+      translation: 'грейпфрут',
+      image: '/img/grapefruit.jpg',
+      audioSrc: './audio/grapefruit.mp3'
+    },
+    {
+      word: 'lemon',
+      translation: 'лимон',
+      image: '/img/lemon.jpg',
+      audioSrc: './audio/lemon.mp3'
+    },
+    {
+      word: 'melon',
+      translation: 'дыня',
+      image: '/img/melon.jpg',
+      audioSrc: './audio/melon.mp3'
+    },
+    {
+      word: 'pear',
+      translation: 'груша',
+      image: '/img/pear.jpg',
+      audioSrc: './audio/pear.mp3'
+    },
+    {
+      word: 'pineapple',
+      translation: 'ананас',
+      image: '/img/pineapple.jpg',
+      audioSrc: './audio/pineapple.mp3'
     }
   ]
 ]

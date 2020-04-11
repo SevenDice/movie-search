@@ -16,6 +16,8 @@ let Sidenav = {
               <a href="/#/animal_set-b" class="header-item">Animal (set B)</a>
               <a href="/#/clothes" class="header-item">Clothes</a>
               <a href="/#/emotions" class="header-item">Emotions</a>
+              <a href="/#/fruits" class="header-item">Fruits</a>
+              <a href="/#/vegetables" class="header-item">Vegetables</a>
             </ul>
           </div>
         </nav>

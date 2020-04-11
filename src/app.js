@@ -7,6 +7,8 @@ import Animal_setA from './views/pages/Animal_setA.js'
 import Animal_setB from './views/pages/Animal_setB.js'
 import Clothes from './views/pages/Clothes.js'
 import Emotions from './views/pages/Emotions.js'
+import Fruits from './views/pages/Fruits.js'
+import Vegetables from './views/pages/Vegetables.js'
 import Error404     from './views/pages/Error404.js'
 
 import Sidenav from './views/components/Sidenav.js'
@@ -24,6 +26,8 @@ const routes = {
   , '/animal_set-b'      : Animal_setB
   , '/clothes'      : Clothes
   , '/emotions'      : Emotions
+  , '/fruits'      : Fruits
+  , '/vegetables'      : Vegetables
 };
 
 const router = async () => {
