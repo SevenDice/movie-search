@@ -1,6 +1,6 @@
 import cards from "../../assets/cards.js";
 
-let getTitleList = async () => {
+export let getTitleList = async () => {
   try {
     const titleList = cards[0];
     return titleList;
@@ -20,7 +20,7 @@ let getImageList = async () => {
   }
 }
 
-let getLinkList = async () => {
+export let getLinkList = async () => {
   try {
     const linkList = cards[2];
     return linkList;
