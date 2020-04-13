@@ -1,3 +1,14 @@
+export let getCards = async (cards) => {
+  try {
+    const cardsData = cards;
+    return cardsData;
+  }
+
+  catch (err) {
+    console.log('Error to get cards data', err);
+  }
+}
+
 export function createCards (arr) {
   let cardContainer = '';
   cardContainer += /*html*/`<div class="rating none"></div>`

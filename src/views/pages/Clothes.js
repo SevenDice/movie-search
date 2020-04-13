@@ -1,20 +1,9 @@
-import cards from "../../assets/cards.js";
-import {createCards} from '../../services/GenerateCards.js'
-
-let getCards = async () => {
-  try {
-    const cardsData = cards[7];
-    return cardsData;
-  }
-
-  catch (err) {
-    console.log('Error to get cards data', err);
-  }
-}
+import {categories} from "../../assets/cards.js";
+import {createCards, getCards} from '../../services/GenerateCards.js'
 
 let Clothes = {
   render : async () => {
-    let cardsContent =  await getCards();
+    let cardsContent =  await getCards(categories.clothes);
     return createCards(cardsContent);
   }
   , after_render: async () => {

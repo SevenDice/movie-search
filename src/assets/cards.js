@@ -404,8 +404,21 @@ const cards = [
   ]
 ]
 
+export const itemList = {
+  title: cards[0],
+  image: cards[1],
+  link: cards[2]
+}
 
-
-
+export const categories = {
+  action_set_a: cards[3],
+  action_set_b: cards[4],
+  animal_set_a: cards[5],
+  animal_set_b: cards[6],
+  clothes: cards[7],
+  emotions: cards[8],
+  fruits: cards[9],
+  vegetables: cards[10],
+}
 
 export default cards;

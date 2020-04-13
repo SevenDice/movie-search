@@ -1,8 +1,8 @@
-import cards from "../../assets/cards.js";
+import {itemList} from "../../assets/cards.js";
 
 export let getTitleList = async () => {
   try {
-    const titleList = cards[0];
+    const titleList = itemList.title;
     return titleList;
 
   } catch (err) {
@@ -12,7 +12,7 @@ export let getTitleList = async () => {
 
 let getImageList = async () => {
   try {
-    const imagesList = cards[1];
+    const imagesList = itemList.image;
     return imagesList;
 
   } catch (err) {
@@ -22,7 +22,7 @@ let getImageList = async () => {
 
 export let getLinkList = async () => {
   try {
-    const linkList = cards[2];
+    const linkList = itemList.link;
     return linkList;
 
   } catch (err) {
