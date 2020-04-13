@@ -1,4 +1,5 @@
 import cards from "../../assets/cards.js";
+import {createCards} from '../../services/GenerateCards.js'
 
 let getCards = async () => {
   try {
@@ -14,28 +15,7 @@ let getCards = async () => {
 let Fruits = {
   render : async () => {
     let cardsContent =  await getCards();
-    let view = '';
-
-    view += /*html*/`<div class="rating none"></div>`
-
-    for(let i = 0; i < cardsContent.length; i++) {
-      view += /*html*/`
-      <div class="card-container">
-          <div class="card card-cover">
-            <div class="front" style="background-image: url(../../assets${cardsContent[i].image});">
-              <div class="card-header ">${cardsContent[i].word}</div>
-            </div>
-            <div class="back" style="background-image: url(../../assets${cardsContent[i].image});">
-              <div class="card-header ">${cardsContent[i].translation}</div>
-            </div>
-            <div class="rotate"></div>
-          </div>
-        </div>
-      `
-      // class "none" for hide content inside card
-    }
-
-      return view
+    return createCards(cardsContent);
   }
   , after_render: async () => {
   }

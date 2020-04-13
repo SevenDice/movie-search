@@ -29,7 +29,7 @@ let Sidenav = {
           </nav>
           <div class="switch-container">
             <label for="" class="switch">
-              <input type="checkbox" class="switch-input">
+              <input type="checkbox" class="switch-input" checked>
               <span class="switch-label" data-on="Train" data-off="Play"></span>
               <span class="switch-handle"></span>
             </label>
