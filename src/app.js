@@ -1,4 +1,4 @@
-"use strict";
+import './assets/style.css'
 
 import Main from './views/pages/Main.js'
 import Action_setA from './views/pages/Action_setA.js'
