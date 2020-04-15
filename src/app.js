@@ -1,29 +1,27 @@
 import './assets/style.css'
 
-import Main from './views/pages/Main.js'
-import Action_setA from './views/pages/Action_setA.js'
-import Action_setB from './views/pages/Action_setB.js'
-import Animal_setA from './views/pages/Animal_setA.js'
-import Animal_setB from './views/pages/Animal_setB.js'
-import Clothes from './views/pages/Clothes.js'
-import Emotions from './views/pages/Emotions.js'
-import Fruits from './views/pages/Fruits.js'
-import Vegetables from './views/pages/Vegetables.js'
-import Error404     from './views/pages/Error404.js'
+import Main from './views/pages/Main'
+import ActionSetA from './views/pages/ActionSetA'
+import ActionSetB from './views/pages/ActionSetB'
+import AnimalSetA from './views/pages/AnimalSetA'
+import AnimalSetB from './views/pages/AnimalSetB'
+import Clothes from './views/pages/Clothes'
+import Emotions from './views/pages/Emotions'
+import Fruits from './views/pages/Fruits'
+import Vegetables from './views/pages/Vegetables'
+import Error404     from './views/pages/Error404'
 
-import Sidenav from './views/components/Sidenav.js'
+import Sidenav from './views/components/Sidenav'
 
-import Utils from './services/Utils.js'
-
-import Cards from './assets/cards.js'
+import Utils from './services/Utils'
 
 // List of supported routes
 const routes = {
   '/'             : Main
-  , '/action_set-a'      : Action_setA
-  , '/action_set-b'      : Action_setB
-  , '/animal_set-a'      : Animal_setA
-  , '/animal_set-b'      : Animal_setB
+  , '/action_set-a'      : ActionSetA
+  , '/action_set-b'      : ActionSetB
+  , '/animal_set-a'      : AnimalSetA
+  , '/animal_set-b'      : AnimalSetB
   , '/clothes'      : Clothes
   , '/emotions'      : Emotions
   , '/fruits'      : Fruits
@@ -41,14 +39,14 @@ const router = async () => {
   await Sidenav.after_render();
 
   // Get the parsed URl from the addressbar
-  let request = Utils.parseRequestURL()
+  const request = Utils.parseRequestURL()
 
   // Parse the URL and if it has an id part, change it with the string ":id"
-  let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
+  const parsedURL = (request.resource ? `/${  request.resource}` : '/') + (request.id ? '/:id' : '') + (request.verb ? `/${  request.verb}` : '')
 
   // Get the page from our hash of supported routes.
   // If the parsed URL is not in our list of supported routes, select the 404 page instead
-  let page = routes[parsedURL] ? routes[parsedURL] : Error404
+  const page = routes[parsedURL] ? routes[parsedURL] : Error404
   content.innerHTML = await page.render();
   await page.after_render();
 

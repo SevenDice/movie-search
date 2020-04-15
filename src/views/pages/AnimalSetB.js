@@ -1,12 +1,12 @@
 import {categories} from "../../assets/cards.js";
 import {createCards, getCards} from '../../services/GenerateCards.js'
 
-let Action_setA = {
+let AnimalSetB = {
   render : async () => {
-    let cardsContent =  await getCards(categories.action_set_a);
-      return createCards(cardsContent);
+    let cardsContent =  await getCards(categories.animal_set_b);
+    return createCards(cardsContent);
   }
   , after_render: async () => {
   }
 }
-export default Action_setA;
+export default AnimalSetB;

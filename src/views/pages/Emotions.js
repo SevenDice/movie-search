@@ -1,9 +1,9 @@
-import {categories} from "../../assets/cards.js";
-import {createCards, getCards} from '../../services/GenerateCards.js'
+import {categories} from "../../assets/cards";
+import {createCards, getCards} from '../../services/GenerateCards'
 
-let Emotions = {
+const Emotions = {
   render : async () => {
-    let cardsContent =  await getCards(categories.emotions);
+    const cardsContent =  await getCards(categories.emotions);
     return createCards(cardsContent);
   }
   , after_render: async () => {

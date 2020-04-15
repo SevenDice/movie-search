@@ -1,19 +1,21 @@
-export let getCards = async (cards) => {
+/* eslint-disable consistent-return */
+export const getCards = async (cards) => {
   try {
     const cardsData = cards;
     return cardsData;
   }
 
   catch (err) {
-    console.log('Error to get cards data', err);
+    throw new Error('Error to get cards data', err);
   }
+  
 }
 
 export function createCards (arr) {
   let cardContainer = '';
-  cardContainer += /*html*/`<div class="rating none"></div>`
-  for(let i = 0; i < arr.length; i++) {
-    cardContainer += /*html*/`
+  cardContainer += /* html */`<div class="rating none"></div>`
+  for(let i = 0; i < arr.length; i += 1) {
+    cardContainer += /* html */`
     <div class="card-container">
         <div class="card card-cover">
           <div class="front" style="background-image: url(../../assets${arr[i].image});">
@@ -29,7 +31,7 @@ export function createCards (arr) {
     // class "none" for hide content inside card
   }
 
-  cardContainer += /*html*/ `
+  cardContainer += /* html */ `
     <div class="btns">
       <button class="btn none">Start Game</button>
     </div>
