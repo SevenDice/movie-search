@@ -1,5 +1,5 @@
 import {categories} from "../../assets/cards.js";
-import {createCards} from '../../services/GenerateCards.js'
+import {createCards, getCards} from '../../services/GenerateCards.js'
 
 let Animal_setA = {
   render : async () => {
