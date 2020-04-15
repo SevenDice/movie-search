@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-import {itemList} from "../../assets/cards";
+import { itemList } from "../../assets/cards";
 
 export const getTitleList = async () => {
   try {
@@ -38,11 +38,11 @@ const Main = {
     const mainCardLink = await getLinkList();
 
     let view = '';
-    
-    for(let i = 0; i < mainCardTitle.length; i += 1) {
+
+    for (let i = 0; i < mainCardTitle.length; i += 1) {
       view += /* html */`
-      <a href=${`/#${  mainCardLink[i]}`} class="main-card green">
-      <img src=${`./assets${  mainCardImage[i]}`} alt="" srcset="">
+      <a href=${`/#${mainCardLink[i]}`} class="main-card green">
+      <img src=${`./assets${mainCardImage[i]}`} alt="" srcset="">
       ${mainCardTitle[i]}
     </a>
       `

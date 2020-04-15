@@ -9,7 +9,7 @@ import Clothes from './views/pages/Clothes'
 import Emotions from './views/pages/Emotions'
 import Fruits from './views/pages/Fruits'
 import Vegetables from './views/pages/Vegetables'
-import Error404     from './views/pages/Error404'
+import Error404 from './views/pages/Error404'
 
 import Sidenav from './views/components/Sidenav'
 
@@ -17,15 +17,15 @@ import Utils from './services/Utils'
 
 // List of supported routes
 const routes = {
-  '/'             : Main
-  , '/action_set-a'      : ActionSetA
-  , '/action_set-b'      : ActionSetB
-  , '/animal_set-a'      : AnimalSetA
-  , '/animal_set-b'      : AnimalSetB
-  , '/clothes'      : Clothes
-  , '/emotions'      : Emotions
-  , '/fruits'      : Fruits
-  , '/vegetables'      : Vegetables
+  '/': Main
+  , '/action_set-a': ActionSetA
+  , '/action_set-b': ActionSetB
+  , '/animal_set-a': AnimalSetA
+  , '/animal_set-b': AnimalSetB
+  , '/clothes': Clothes
+  , '/emotions': Emotions
+  , '/fruits': Fruits
+  , '/vegetables': Vegetables
 };
 
 const router = async () => {
@@ -42,7 +42,7 @@ const router = async () => {
   const request = Utils.parseRequestURL()
 
   // Parse the URL and if it has an id part, change it with the string ":id"
-  const parsedURL = (request.resource ? `/${  request.resource}` : '/') + (request.id ? '/:id' : '') + (request.verb ? `/${  request.verb}` : '')
+  const parsedURL = (request.resource ? `/${request.resource}` : '/') + (request.id ? '/:id' : '') + (request.verb ? `/${request.verb}` : '')
 
   // Get the page from our hash of supported routes.
   // If the parsed URL is not in our list of supported routes, select the 404 page instead

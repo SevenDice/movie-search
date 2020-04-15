@@ -8,13 +8,13 @@ export const getCards = async (cards) => {
   catch (err) {
     throw new Error('Error to get cards data', err);
   }
-  
+
 }
 
-export function createCards (arr) {
+export function createCards(arr) {
   let cardContainer = '';
   cardContainer += /* html */`<div class="rating none"></div>`
-  for(let i = 0; i < arr.length; i += 1) {
+  for (let i = 0; i < arr.length; i += 1) {
     cardContainer += /* html */`
     <div class="card-container">
         <div class="card card-cover">
