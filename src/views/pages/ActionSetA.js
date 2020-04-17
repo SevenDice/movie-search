@@ -1,6 +1,7 @@
 /* eslint func-names: ["error", "never"] */
-import { categories } from "../../assets/cards";
-import { createCards, getCards } from '../../services/GenerateCards'
+import { categories } from "../../assets/cards"
+import { createCards, getCards, playWord, flipCard } from '../../services/GenerateCards'
+import { gameMode } from "../../services/GameLogic"
 
 const ActionSetA = {
   render: async () => {
@@ -8,14 +9,8 @@ const ActionSetA = {
     return createCards(cardsContent);
   }
   , after_render: async () => {
-    const container = document.getElementById('page_container');
-    container.onclick = function (event) {
-      if (event.target.className !== 'front') {
-        return
-      }
-      const card = event.target.closest('.card-container');
-      card.remove();
-    }
+    flipCard();
+    playWord();
   }
 }
 export default ActionSetA;

@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 import { itemList } from "../../assets/cards";
+import { gameMode } from "../../services/GameLogic"
 
 export const getTitleList = async () => {
   try {
@@ -49,7 +50,9 @@ const Main = {
     }
     return view
   },
-  after_render: async () => { }
+  after_render: async () => { 
+
+  }
 
 }
 
