@@ -1,77 +1,93 @@
-/* eslint-disable func-names */
 /* eslint-disable consistent-return */
-export const gameMode = {
-  state: false
-};
+import { gameEnv } from "./Variables";
 
 export const getCards = async (cards) => {
   try {
     const cardsData = cards;
     return cardsData;
+  } catch (err) {
+    throw new Error("Error to get cards data", err);
   }
-
-  catch (err) {
-    throw new Error('Error to get cards data', err);
-  }
-}
-
-export function playWord() {
-  const container = document.getElementById('page_container');
-  container.onclick = function (event) {
-    if (event.target.className !== 'front') {
-      return
-    }
-    const card = event.target.closest('.card');
-    const el = card.querySelector('#audio-src');
-    el.play();
-  }
-}
-
-export function flipCard() {
-  const container = document.getElementById('page_container');
-  container.onclick = function (event) {
-    if (event.target.className !== 'rotate') {
-      return
-    }
-    const card = event.target.closest('.card-container');
-    const el = card.querySelector('#card-element');
-    el.classList.toggle('translate')
-    if (el.classList.contains('translate')) {
-      setTimeout(() => el.classList.toggle('translate'), 1500);
-    }
-  }
-}
+};
 
 export function createCards(arr) {
-  let cardContainer = '';
-  cardContainer += /* html */`<div class="rating none"></div>`
+  let cardContainer = "";
+  cardContainer += /* html */ `<div class="rating none"></div>`;
   for (let i = 0; i < arr.length; i += 1) {
-    cardContainer += /* html */`
-    <div class="card-container">
-        <div id="card-element" class="card">
-          <div class="front" style="background-image: url(../../assets${arr[i].image});">
-            <div class="card-header ">${arr[i].word}</div>
-          </div>
-          <div class="back" style="background-image: url(../../assets${arr[i].image});">
-            <div class="card-header ">${arr[i].translation}</div>
-          </div>
-          <div id="btn-rotate" class="rotate"></div>
-          <audio id="audio-src" class="audio">
+    if (gameEnv.gameMode === false) {
+      cardContainer += /* html */ `
+      <div class="card-container">
+          <div class="card">
+            <div class="front" style="background-image: url(../../assets${arr[i].image});">
+            <div class="card-header">${arr[i].word}</div>
+            </div>
+            <div class="back" style="background-image: url(../../assets${arr[i].image});">
+              <div class="card-header">${arr[i].translation}</div>
+            </div>
+            <div class="rotate"></div>
+            <audio id="audio-src" class="audioword">
             <source id="audio-source" src="${arr[i].audioSrc}" type="audio/mpeg">
-          </audio>
+            </audio>
+          </div>
         </div>
-      </div>
-    `
-    // card-header, rotate сюда none
-    // class "none" for hide content inside card
+      `;
+    } else {
+      cardContainer += /* html */ `
+      <div class="card-container">
+          <div class="card card-cover">
+            <div class="front" style="background-image: url(../../assets${arr[i].image});">
+            <div class="card-header none">${arr[i].word}</div>
+            </div>
+            <div class="back" style="background-image: url(../../assets${arr[i].image});">
+              <div class="card-header none">${arr[i].translation}</div>
+            </div>
+            <div class="rotate none"></div>
+            <audio id="audio-src" class="audioword">
+            <source id="audio-source" src="${arr[i].audioSrc}" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      `;
+    }
   }
 
-  cardContainer += /* html */ `
+  if (gameEnv.gameMode === false) {
+    cardContainer += /* html */ `
+      <div class="btns">
+        <button id="btn-start" class="btn none">Start Game</button>
+      </div>
+      <audio id="audio-correct" class="soundEffects">
+        <source src="../../assets/audio/correct.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="audio-error" class="soundEffects">
+        <source src="../../assets/audio/error.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="audio-success" class="soundEffects">
+        <source src="../../assets/audio/success.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="audio-failure" class="soundEffects">
+        <source src="../../assets/audio/failure.mp3" type="audio/mpeg">
+      </audio>
+      `;
+  } else {
+    cardContainer += /* html */ `
     <div class="btns">
-      <button id="btn-start" class="btn none">Start Game</button>
+      <button id="btn-start" class="btn">Start Game</button>
     </div>
-    <audio class="soundEffects"></audio>
-    `
+    <audio id="audio-correct" class="soundEffects">
+      <source src="../../assets/audio/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-error" class="soundEffects">
+      <source src="../../assets/audio/error.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-success" class="soundEffects">
+      <source src="../../assets/audio/success.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-failure" class="soundEffects">
+      <source src="../../assets/audio/failure.mp3" type="audio/mpeg">
+    </audio>
+    `;
+  }
 
   return cardContainer;
 }

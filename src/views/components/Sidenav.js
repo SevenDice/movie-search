@@ -1,77 +1,90 @@
 import { getLinkList, getTitleList } from "../pages/Main";
-import { gameMode } from "../../services/GameLogic"
+import { gameModeCheck } from "../../services/GameFunctions";
+import { gameEnv } from "../../services/Variables";
+import Utils from "../../services/Utils";
 
 const Sidenav = {
   render: async () => {
     const navigationItems = await getTitleList();
     const navigationLinks = await getLinkList();
-    let view = '';
+    let view = "";
 
-    view += /* html */ `
-    <nav role="navigation">
-          <div class="menuToggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-            <!-- change to colored -->
-            <ul class="menu green">
-              <a href="/#/" class="header-item active">Main Page</a>
-    `
-    for (let i = 0; i < navigationItems.length; i += 1) {
-      view += /* html */`
-      <a href="/#${navigationLinks[i]}" class="header-item">${navigationItems[i]}</a>
-      `
+    if (gameEnv.gameMode === true) {
+      view += /* html */ `
+      <nav role="navigation">
+            <div class="menuToggle">
+              <input type="checkbox">
+              <span></span>
+              <span></span>
+              <span></span>
+              <!-- change to colored -->
+              <ul class="menu">
+                <a href="/#/" class="header-item">Main Page</a>
+      `;
+    } else {
+      view += /* html */ `
+      <nav role="navigation">
+            <div class="menuToggle">
+              <input type="checkbox">
+              <span></span>
+              <span></span>
+              <span></span>
+              <!-- change to colored -->
+              <ul class="menu green">
+                <a href="/#/" class="header-item">Main Page</a>
+      `;
     }
-
-    view += /* html */ `
-            </ul>
+    for (let i = 0; i < navigationItems.length; i += 1) {
+      view += /* html */ `
+      <a href="/#${navigationLinks[i]}" class="header-item">${navigationItems[i]}</a>
+      `;
+    }
+    if (gameEnv.gameMode === false) {
+      view += /* html */ `
+              </ul>
+              </div>
+            </nav>
+            <div class="switch-container">
+              <label for="" class="switch">
+                <input id="switcher" type="checkbox" class="switch-input" checked>
+                <span class="switch-label" data-on="Train" data-off="Play"></span>
+                <span class="switch-handle"></span>
+              </label>
             </div>
-          </nav>
-          <div class="switch-container">
-            <label for="" class="switch">
-              <input id="switcher" type="checkbox" class="switch-input" checked>
-              <span class="switch-label" data-on="Train" data-off="Play"></span>
-              <span class="switch-handle"></span>
-            </label>
-          </div>
-        `
-    return view
+          `;
+    } else {
+      view += /* html */ `
+              </ul>
+              </div>
+            </nav>
+            <div class="switch-container">
+              <label for="" class="switch">
+                <input id="switcher" type="checkbox" class="switch-input">
+                <span class="switch-label" data-on="Train" data-off="Play"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </div>
+          `;
+    }
+    return view;
   },
   after_render: async () => {
-    const container = document.getElementById('header_container');
-    container.onclick = function (event) {
-      if (event.target.className !== 'switch-handle') {
-        return
+    const req = Utils.parseRequestURL();
+    const pageURL =
+      (req.resource ? `/#/${req.resource}` : "/#/") +
+      (req.id ? "/:id" : "") +
+      (req.verb ? `/${req.verb}` : "");
+
+    const navItemsCollection = document.querySelectorAll('.header-item')
+
+    for(let i = 0; i < navItemsCollection.length; i += 1) {
+      if (navItemsCollection[i].getAttribute('href') === pageURL) {
+        navItemsCollection[i].classList.toggle('active')
       }
-      const card = event.target.closest('.switch');
-      const el = card.querySelector('#switcher');
-      const buttonStart = document.getElementById('btn-start');
-      const bgCards = document.querySelectorAll('#page_container>a');
-      console.log(tes);
-
-      if (el.checked === false) {
-        el.checked = true;
-       //buttonStart.classList.add('none');
-
-        for (let i = 0; i < bgCards.length; i+=1) {
-          
-          bgCards[i].closest('a').classList.toggle('green');
-       };
-
-      } else {
-        el.checked = false;
-        //buttonStart.classList.remove('none');
-        for (let i = 0; i < bgCards.length; i+=1) {
-          bgCards[i].closest('a').classList.toggle('green');
-        };
-      }
-      
-   }
-
-   
-  
-  }
-}
+    }
+    
+    gameModeCheck();
+  },
+};
 
 export default Sidenav;
