@@ -1,9 +1,10 @@
 const Header = {
   render: async () => {
-    
-    let view = "";
 
-    return view;
+    const view =  /* html */`
+        <h1>MovieSearch</h1>
+      `
+    return view
   },
   after_render: async () => {
 
