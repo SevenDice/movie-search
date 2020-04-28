@@ -4,6 +4,7 @@ import Main from "./views/pages/Main";
 import Error404 from "./views/pages/Error404";
 
 import Header from "./views/components/Header";
+import Footer from "./views/components/Footer"
 
 import Utils from "./services/Utils";
 
@@ -16,10 +17,14 @@ const router = async () => {
   // Load view element:
   const header = null || document.getElementById("header_container");
   const content = null || document.getElementById("page_container");
+  const footer = null || document.getElementById('footer_container');
 
-  // Render the Header of the page
+  // Render the Header and Footer of the page
   header.innerHTML = await Header.render();
   await Header.after_render();
+
+  footer.innerHTML = await Footer.render();
+  await Footer.after_render();
 
   // Get the parsed URl from the addressbar
   const request = Utils.parseRequestURL();
