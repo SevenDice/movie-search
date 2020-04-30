@@ -1,3 +1,5 @@
+import swiper from 'swiper'
+
 const Main = {
   render: async () => {
     
