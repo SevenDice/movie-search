@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const ENV = process.env.npm_lifecycle_event;
@@ -138,7 +138,7 @@ const config = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'style.css'
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
