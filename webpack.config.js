@@ -138,7 +138,7 @@ const config = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'style.css',
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
