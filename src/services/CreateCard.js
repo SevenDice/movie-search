@@ -5,9 +5,6 @@ import Swiper from "swiper";
 
 import swiperParametrs from "./SwiperParametrs";
 
-// const input = document.querySelector('.search-input');
-// const info = document.querySelector(".info");
-
 function createCard() {
   for (let i = 0; i < 10; i += 1) {
     const card = document.createElement("div");

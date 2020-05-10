@@ -1,12 +1,13 @@
 import { getMovieData, search } from "../../services/CreateCard";
+import Keyboard from "../../services/Keyboard";
 
 const Main = {
   render: async () => {
     const view = /* html */ `
         <form action="" class="search">
-          <input type="search" class="search-input" type="text" placeholder="Search movie" autofocus>
-          <button class="search-btn" type="submit">Search</button>
-          <span class="search-tia"></span>
+          <input type="search" class="use-keyboard-input search-input" type="text" placeholder="Search movie" autofocus>
+          <button id="submit-btn" class="search-btn" type="submit">Search</button>
+          <span id="virtual-keyboard" class="search-tia"></span>
         </form>
         <p class="info"></p>
       <div class="swiper-outer">
@@ -23,11 +24,20 @@ const Main = {
   },
   after_render: async () => {
     const searchForm = document.querySelector("form.search");
+    const toggleKeyboard = document.getElementById('virtual-keyboard');
+
     getMovieData("home");
+
+    Keyboard.init();
+    toggleKeyboard.addEventListener('click', () => {
+      document.getElementById('keyboard_container').classList.toggle('keyboard--hidden');
+    })
+
     searchForm.addEventListener("submit", (event) => {
       search();
       event.preventDefault();
     });
+    
   },
 };
 

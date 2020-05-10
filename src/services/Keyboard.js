@@ -15,7 +15,6 @@ const Keyboard = {
   properties: {
     value: '',
     capsLock: false,
-    lang: false,
   },
 
   init() {
@@ -24,7 +23,8 @@ const Keyboard = {
     this.elements.keysContainer = document.createElement('div')
 
     // Setup main elements
-    this.elements.main.classList.add('keyboard', '1keyboard--hidden')
+    this.elements.main.classList.add('keyboard','keyboard--hidden')
+    this.elements.main.setAttribute('id', 'keyboard_container');
     this.elements.keysContainer.classList.add('keyboard__keys')
     this.elements.keysContainer.appendChild(this._createKeys())
 
@@ -48,7 +48,7 @@ const Keyboard = {
     const fragment = document.createDocumentFragment()
     const keyLayout = [
       '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace',
-      'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+      'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
       'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', 'enter',
       'done', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '?',
       'space',
@@ -93,8 +93,7 @@ const Keyboard = {
           keyElement.innerHTML = createIconHTML('keyboard_return')
 
           keyElement.addEventListener('click', () => {
-            this.properties.value += '\n'
-            this._triggerEvent('oninput')
+            document.getElementById('submit-btn').click();
           })
 
           break
@@ -117,6 +116,17 @@ const Keyboard = {
           keyElement.addEventListener('click', () => {
             this.close()
             this._triggerEvent('onclose')
+          })
+
+          break
+
+        case 'tab':
+          keyElement.classList.add('keyboard__key--wide')
+          keyElement.innerHTML = createIconHTML('keyboard_tab')
+
+          keyElement.addEventListener('click', () => {
+            this.properties.value += '     '
+            this._triggerEvent('oninput')
           })
 
           break
@@ -163,7 +173,7 @@ const Keyboard = {
     this.properties.value = initialValue || ''
     this.eventHandlers.oninput = oninput
     this.eventHandlers.onclose = onclose
-    this.elements.main.classList.remove('keyboard--hidden')
+    // this.elements.main.classList.remove('keyboard--hidden')
   },
 
   close() {
@@ -174,6 +184,8 @@ const Keyboard = {
   },
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  Keyboard.init()
-})
+// window.addEventListener('DOMContentLoaded', () => {
+//   Keyboard.init()
+// })
+
+export default Keyboard;

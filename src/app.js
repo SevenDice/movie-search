@@ -1,4 +1,5 @@
 import "./assets/style.css";
+import "./assets/keyboard.css"
 
 import Main from "./views/pages/Main";
 import Error404 from "./views/pages/Error404";
