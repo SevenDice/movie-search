@@ -1,11 +1,10 @@
-import swiper from 'swiper'
+import { getMovieData, search } from "../../services/CreateCard";
 
 const Main = {
   render: async () => {
-    
-    const view =  /* html */`
+    const view = /* html */ `
         <form action="" class="search">
-          <input class="search-input" type="text" placeholder="Search movie" autofocus>
+          <input type="search" class="search-input" type="text" placeholder="Search movie" autofocus>
           <button class="search-btn" type="submit">Search</button>
           <span class="search-tia"></span>
         </form>
@@ -19,11 +18,16 @@ const Main = {
         <div class="swiper-btn swiper-btn-next" tabindex="0" role="button" aria-label="Next slide"></div>
         <div class="swiper-btn swiper-btn-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
       </div>
-      `
-    return view
+      `;
+    return view;
   },
   after_render: async () => {
-
+    const searchForm = document.querySelector("form.search");
+    getMovieData("home");
+    searchForm.addEventListener("submit", (event) => {
+      search();
+      event.preventDefault();
+    });
   },
 };
 

@@ -97,7 +97,7 @@ body {
   width: 48px;
   height: 28px;
   background-image: url("../assets/img/tia.png");
-  right: 120px;
+  right: 145px;
   cursor: pointer;
   opacity: .8;
   transition: .2s;
@@ -142,12 +142,16 @@ body {
   font-size: 24px;
   padding: 15px;
   white-space: pre-wrap; 
-  text-overflow: clip; 
+  text-overflow: clip;
+  height: auto;
+  overflow-x: hidden;
+  word-break: break-word; 
 }
 
 .card-body {
   height: 445px;
   background-size: cover;
+  background-repeat: round;
 }
 
 .card-footer {
@@ -180,11 +184,15 @@ body {
 
 .swiper-container {
   height: 669px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
 }
 
 .swiper-wrapper {
   margin-bottom: 60px;
   cursor: pointer;
+  display: flex;
 }
 
 .swiper-btn {
@@ -212,6 +220,23 @@ body {
 .swiper-btn-prev {
   background-image: url("../assets/img/prev.svg");
   left: -70px;
+}
+.swiper-pagination-bullets{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+}
+
+.swiper-pagination-bullet{
+  height: 15px;
+  width: 15px;
+  background-color: grey;
+  border-radius: 50%;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
