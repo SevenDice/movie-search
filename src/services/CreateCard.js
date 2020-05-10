@@ -123,6 +123,8 @@ async function valueTranslate() {
 }
 
 export async function search() {
+  const loader= document.getElementById('loader_container')
+  loader.classList.remove('hidden');
   const input = document.querySelector(".search-input");
   const url = `https://www.omdbapi.com/?s=${input.value}&apikey=d0b3ce4d`;
   const res = await fetch(url);
@@ -135,8 +137,10 @@ export async function search() {
     const info = document.querySelector(".info");
     getMovieData(input.value);
     info.textContent = "";
+    loader.classList.add('hidden');
   } else {
     valueTranslate();
+    loader.classList.add('hidden');
   }
 }
 
