@@ -1,3 +1,4 @@
 # Задания для RS School 2020 Q1
  - English For Kids: https://english-for-kids.sevendc.pro/
- - MovieSearch: https://sevendice-movie-search.netlify.app/
+ - Movie Search: https://sevendice-movie-search.netlify.app/
+ - Fancy Weather: https://sevendice-fancy-weather.netlify.app/
