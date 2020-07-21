@@ -15,7 +15,6 @@ JS Web application for search movies
 ## Technologies:
 
 - Babel
-- SASS
 - ESLint
 - Webpack
 
